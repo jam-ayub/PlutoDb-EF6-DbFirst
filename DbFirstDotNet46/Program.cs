@@ -8,6 +8,13 @@ namespace DbFirstDotNet46
 {
     public class Program
     {
+        public enum Level : byte
+        {
+            Beginner = 1,
+            Intermediate = 2,
+            Advanced = 3
+        }
+
         static void Main(string[] args)
         {
             var _dbContext = new PlutoDbContext();
@@ -15,9 +22,12 @@ namespace DbFirstDotNet46
 
             var author = _dbContext.GetAuthorCourses(2);
 
-            foreach (var course in courses)
+            var course = new Cours();
+            course.Level = CourseLevel.Begginer;
+
+            foreach (var c in courses)
             {
-                Console.WriteLine(course.Title);
+                Console.WriteLine(c.Title);
             }
             Console.ReadLine();
         }
