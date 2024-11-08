@@ -15,5 +15,6 @@ namespace DbFirstDotNet46
     public partial class UserProfile
     {
         public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
