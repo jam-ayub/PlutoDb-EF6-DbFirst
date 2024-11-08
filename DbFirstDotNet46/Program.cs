@@ -12,7 +12,9 @@ namespace DbFirstDotNet46
         {
             var _dbContext = new PlutoDbContext();
             var courses = _dbContext.GetCourses();
-            _dbContext.GetAuthorCourses(1);
+
+            var author = _dbContext.GetAuthorCourses(2);
+
             foreach (var course in courses)
             {
                 Console.WriteLine(course.Title);
